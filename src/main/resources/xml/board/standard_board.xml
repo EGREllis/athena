@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    https://cdn11.bigcommerce.com/s-ua4dd/images/stencil/1280x1280/products/20718/40798/scythe-extended-board-cover__13503.1501229524.jpg?c=2
+    -->
+<board>
+    <spaces>
+        <!-- All spaces are addressed radially from the factory, clockwise, starting from north_east
+                12 o'clock -> north_east north_east north east north_east -->
+        <!-- Centre -->
+        <space id="centre" terrain="factory" />
+
+        <!-- Range 1 -->
+        <space id="north_east" terrain="lake" />
+        <space id="east" terrain="mountain" />
+        <space id="south_east" terrain="lake" />
+        <space id="south_west" terrain="oil" />
+        <space id="west" terrain="lake" />
+        <space id="north_west" terrain="forest" />
+
+        <!-- Range 2 -->
+        <space id="north_east_north_east" terrain="mountain" encounter="true" />
+        <space id="north_east_east" terrain="forest" tunnel="true" />
+        <space id="east_east" terrain="oil" encounter="true" />
+        <space id="east_south_east" terrain="village" tunnel="true" />
+        <space id="south_east_south_east" terrain="forest" />
+        <space id="south_east_south_west" terrain="oil" tunnel="true" />
+        <space id="south_west_south_west" terrain="village" encounter="true" />
+        <space id="south_west_west" terrain="farm" tunnel="true" />
+        <space id="west_west" terrain="village" encounter="true" />
+        <space id="west_north_west" terrain="mountain" tunnel="true" />
+        <space id="north_west_north_west" terrain="lake" />
+        <space id="north_west_north_east" terrain="oil" tunnel="true" />
+
+        <!-- Range 3 -->
+        <space id="north_east_north_east_north_east" terrain="oil" />
+        <space id="north_east_north_east_east" terrain="farm" />
+        <space id="north_east_east_east" terrain="village" />
+        <space id="east_east_east" terrain="mountain" />
+        <space id="east_east_south_east" terrain="lake" />
+        <space id="east_south_east_south_east" terrain="mountain" encounter="true" />
+        <space id="south_east_south_east_south_east" terrain="village" />
+        <space id="south_east_south_east_south_west" terrain="mountain" encounter="true"/>
+        <space id="south_east_south_west_south_west" terrain="farm" />
+        <space id="south_west_south_west_south_west" terrain="lake" />
+        <space id="south_west_south_west_west" terrain="village" encounter="true" />
+        <space id="south_west_west_west" terrain="forest" />
+        <space id="west_west_west" terrain="farm" />
+        <space id="west_west_north_west" terrain="forest" />
+        <space id="west_north_west_north_west" terrain="oil" encounter="true" />
+        <space id="north_west_north_west_north_west" terrain="farm" />
+        <space id="north_west_north_west_north_east" terrain="village" encounter="true" />
+        <space id="north_west_north_east_north_east" terrain="forest" />
+
+        <!-- Range 4 -->
+        <space id="north_east_north_east_north_east_east" terrain="village" />
+        <space id="north_east_north_east_east_east" terrain="farm" encounter="true" />
+        <space id="north_east_east_east_east" terrain="home" faction="rusviet" />
+
+        <space id="east_east_south_east_south_east" terrain="oil" />
+        <space id="east_south_east_south_east_south_east" terrain="farm" />
+
+        <space id="south_east_south_east_south_west_south_west" terrain="village" />
+        <space id="south_east_south_west_south_west_south_west" terrain="home" faction="crimea" />
+
+        <space id="south_west_south_west_south_west_west" terrain="oil" />
+        <space id="south_west_south_west_west_west" terrain="mountain" />
+        <space id="south_west_west_west_west" terrain="forest" encounter="true" />
+
+        <space id="west_west_west_north_west" terrain="home" faction="polonia" />
+        <space id="west_west_north_west_north_west" terrain="lake" />
+        <space id="west_north_west_north_west_north_west" terrain="mountain" />
+        <space id="north_west_north_west_north_west_north_west" terrain="home" faction="albion" />
+
+        <space id="north_west_north_east_north_east_north_east" terrain="home" faction="nordic" />
+
+        <!-- Range 5 -->
+        <space id="east_east_south_east_south_east_south_east" terrain="home" faction="japan" />
+        <space id="south_west_south_west_south_west_west_west" terrain="home" faction="saxony" />
+    </spaces>
+    <links>
+        <!-- Centre -->
+        <link origin="centre" direction="north_east" arrival="north_east" />
+        <link origin="centre" direction="east" arrival="east" />
+        <link origin="centre" direction="south_east" arrival="south_east" />
+        <link origin="centre" direction="south_west" arrival="south_west" />
+        <link origin="centre" direction="west" arrival="west" />
+        <link origin="centre" direction="north_west" arrival="north_west" />
+
+        <!-- Range 1 -->
+        <link origin="north_east" direction="north_east" arrival="north_east_north_east" />
+        <link origin="north_east" direction="east" arrival="north_east_east" />
+        <link origin="north_east" direction="south_east" arrival="east" />
+        <link origin="north_east" direction="south_west" arrival="centre" />
+        <link origin="north_east" direction="west" arrival="north_west" />
+        <link origin="north_east" direction="north_west" arrival="north_west_north_east" />
+
+        <link origin="east" direction="north_east" arrival="north_east_east" />
+        <link origin="east" direction="east" arrival="east_east" />
+        <link origin="east" direction="south_east" arrival="east_south_east" />
+        <link origin="east" direction="south_west" arrival="south_east" />
+        <link origin="east" direction="west" arrival="centre" />
+        <link origin="east" direction="north_west" arrival="north_east" />
+
+        <link origin="south_east" direction="north_east" arrival="east" />
+        <link origin="south_east" direction="east" arrival="east_south_east" />
+        <link origin="south_east" direction="south_east" arrival="south_east_south_east" />
+        <link origin="south_east" direction="south_west" arrival="south_east_south_west" />
+        <link origin="south_east" direction="west" arrival="south_west" />
+        <link origin="south_east" direction="north_west" arrival="centre" />
+
+        <link origin="south_west" direction="north_east" arrival="centre" />
+        <link origin="south_west" direction="east" arrival="south_east" />
+        <link origin="south_west" direction="south_east" arrival="south_east_south_west" />
+        <link origin="south_west" direction="south_west" arrival="south_west_south_west" />
+        <link origin="south_west" direction="west" arrival="south_west_west" />
+        <link origin="south_west" direction="north_west" arrival="west" />
+
+        <link origin="west" direction="north_east" arrival="north_west" />
+        <link origin="west" direction="east" arrival="centre" />
+        <link origin="west" direction="south_east" arrival="south_west" />
+        <link origin="west" direction="south_west" arrival="south_west_west" />
+        <link origin="west" direction="west" arrival="west_west" />
+        <link origin="west" direction="north_west" arrival="west_north_west" />
+
+        <!-- Range 2 -->
+        <link origin="north_east_north_east" direction="north_east" arrival="north_east_north_east_north_east" />
+        <link origin="north_east_north_east" direction="east" arrival="north_east_north_east_east" />
+        <link origin="north_east_north_east" direction="south_east" arrival="north_east_east" />
+        <link origin="north_east_north_east" direction="south_west" arrival="north_east" />
+        <link origin="north_east_north_east" direction="west" arrival="north_west_north_east" />
+        <link origin="north_east_north_east" direction="north_west" arrival="north_west_north_east_north_east" />
+
+        <link origin="north_east_east" direction="north_east" arrival="north_east_north_east_east" />
+        <link origin="north_east_east" direction="east" arrival="north_east_east_east" />
+        <link origin="north_east_east" direction="south_east" arrival="east_east" />
+        <link origin="north_east_east" direction="south_west" arrival="east" />
+        <link origin="north_east_east" direction="west" arrival="north_east" />
+        <link origin="north_east_east" direction="north_west" arrival="north_east_north_east" />
+
+        <link origin="east_east" direction="north_east" arrival="north_east_east_east" />
+        <link origin="east_east" direction="east" arrival="east_east_east" />
+        <link origin="east_east" direction="south_east" arrival="east_east_south_east" />
+        <link origin="east_east" direction="south_west" arrival="east_south_east" />
+        <link origin="east_east" direction="west" arrival="east" />
+        <link origin="east_east" direction="north_west" arrival="north_east_east" />
+
+        <link origin="east_south_east" direction="north_east" arrival="east_east" />
+        <link origin="east_south_east" direction="east" arrival="east_east_south_east" />
+        <link origin="east_south_east" direction="south_east" arrival="east_south_east_south_east" />
+        <link origin="east_south_east" direction="south_west" arrival="south_east_south_east" />
+        <link origin="east_south_east" direction="west" arrival="south_east" />
+        <link origin="east_south_east" direction="north_west" arrival="east" />
+
+        <link origin="south_east_south_east" direction="north_east" arrival="east_south_east" />
+        <link origin="south_east_south_east" direction="east" arrival="east_south_east_south_east" />
+        <link origin="south_east_south_east" direction="south_east" arrival="south_east_south_east_south_east" />
+        <link origin="south_east_south_east" direction="south_west" arrival="south_east_south_east_south_west" />
+        <link origin="south_east_south_east" direction="west" arrival="south_east_south_west" />
+        <link origin="south_east_south_east" direction="north_west" arrival="south_east" />
+
+        <link origin="south_east_south_west" direction="north_east" arrival="south_east" />
+        <link origin="south_east_south_west" direction="east" arrival="south_east_south_east" />
+        <link origin="south_east_south_west" direction="south_east" arrival="south_east_south_east_south_west" />
+        <link origin="south_east_south_west" direction="south_west" arrival="south_east_south_west_south_west" />
+        <link origin="south_east_south_west" direction="west" arrival="south_east_south_east" />
+        <link origin="south_east_south_west" direction="north_west" arrival="south_west" />
+
+        <link origin="south_west_south_west" direction="north_east" arrival="south_west" />
+        <link origin="south_west_south_west" direction="east" arrival="south_east_south_west" />
+        <link origin="south_west_south_west" direction="south_east" arrival="south_east_south_west_south_west" />
+        <link origin="south_west_south_west" direction="south_west" arrival="south_west_south_west_south_west" />
+        <link origin="south_west_south_west" direction="west" arrival="south_west_south_west_west" />
+        <link origin="south_west_south_west" direction="north_west" arrival="south_west_west" />
+
+        <link origin="south_west_west" direction="north_east" arrival="west" />
+        <link origin="south_west_west" direction="east" arrival="south_west" />
+        <link origin="south_west_west" direction="south_east" arrival="south_west_south_west" />
+        <link origin="south_west_west" direction="south_west" arrival="south_west_south_west_west" />
+        <link origin="south_west_west" direction="west" arrival="south_west_west_west" />
+        <link origin="south_west_west" direction="north_west" arrival="west_west" />
+
+        <link origin="west_west" direction="north_east" arrival="west_north_west" />
+        <link origin="west_west" direction="east" arrival="west" />
+        <link origin="west_west" direction="south_east" arrival="south_west_west" />
+        <link origin="west_west" direction="south_west" arrival="south_west_west_west" />
+        <link origin="west_west" direction="west" arrival="west_west_west" />
+        <link origin="west_west" direction="north_west" arrival="west_west_north_west" />
+
+        <link origin="west_north_west" direction="north_east" arrival="north_west_north_west" />
+        <link origin="west_north_west" direction="east" arrival="north_west" />
+        <link origin="west_north_west" direction="south_east" arrival="west" />
+        <link origin="west_north_west" direction="south_west" arrival="west_west" />
+        <link origin="west_north_west" direction="west" arrival="west_west_north_west" />
+        <link origin="west_north_west" direction="north_west" arrival="west_north_west_north_west" />
+
+        <link origin="north_west_north_west" direction="north_east" arrival="north_west_north_west_north_east" />
+        <link origin="north_west_north_west" direction="east" arrival="north_west_north_east" />
+        <link origin="north_west_north_west" direction="south_east" arrival="north_west" />
+        <link origin="north_west_north_west" direction="south_west" arrival="west_north_west" />
+        <link origin="north_west_north_west" direction="west" arrival="west_north_west_north_west" />
+        <link origin="north_west_north_west" direction="north_west" arrival="north_west_north_west_north_west" />
+
+        <link origin="north_west_north_east" direction="north_east" arrival="north_west_north_east_north_east" />
+        <link origin="north_west_north_east" direction="east" arrival="north_east_north_east" />
+        <link origin="north_west_north_east" direction="south_east" arrival="north_east" />
+        <link origin="north_west_north_east" direction="south_west" arrival="north_west" />
+        <link origin="north_west_north_east" direction="west" arrival="north_west_north_west" />
+        <link origin="north_west_north_east" direction="north_west" arrival="north_west_north_west_north_east" />
+
+        <!-- Range 3 -->
+        <!-- <link origin="north_east_north_east_north_east" direction="north_east" arrival="" /> -->
+        <link origin="north_east_north_east_north_east" direction="east" arrival="north_east_north_east_north_east_east" />
+        <link origin="north_east_north_east_north_east" direction="south_east" arrival="north_east_north_east_east" />
+        <link origin="north_east_north_east_north_east" direction="south_west" arrival="north_east_north_east" />
+        <link origin="north_east_north_east_north_east" direction="west" arrival="north_west_north_east_north_east" />
+        <!-- <link origin="north_east_north_east_north_east" direction="north_west" arrival="" /> -->
+
+        <link origin="north_east_north_east_east" direction="north_east" arrival="north_east_north_east_north_east_east" />
+        <link origin="north_east_north_east_east" direction="east" arrival="north_east_north_east_east_east" />
+        <link origin="north_east_north_east_east" direction="south_east" arrival="north_east_east_east" />
+        <link origin="north_east_north_east_east" direction="south_west" arrival="north_east_east" />
+        <link origin="north_east_north_east_east" direction="west" arrival="north_east_north_east" />
+        <link origin="north_east_north_east_east" direction="north_west" arrival="north_east_north_east_north_east" />
+
+        <link origin="north_east_east_east" direction="north_east" arrival="north_east_north_east_east_east" />
+        <!-- <link origin="north_east_east_east" direction="east" arrival="north_east_north_east_east_east" /> -->
+        <link origin="north_east_east_east" direction="south_east" arrival="east_east_east" />
+        <link origin="north_east_east_east" direction="south_west" arrival="east_east" />
+        <link origin="north_east_east_east" direction="west" arrival="north_east_east" />
+        <link origin="north_east_east_east" direction="north_west" arrival="north_east_north_east_east" />
+
+        <!-- <link origin="east_east_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="east_east_east" direction="east" arrival="" /> -->
+        <!-- <link origin="east_east_east" direction="south_east" arrival="" /> -->
+        <link origin="east_east_east" direction="south_west" arrival="east_east_south_east" />
+        <link origin="east_east_east" direction="west" arrival="east_east" />
+        <link origin="east_east_east" direction="north_west" arrival="north_east_east_east" />
+
+        <link origin="east_east_south_east" direction="north_east" arrival="east_east_east" />
+        <!-- <link origin="east_east_south_east" direction="east" arrival="" /> -->
+        <link origin="east_east_south_east" direction="south_east" arrival="east_east_south_east_south_east" />
+        <link origin="east_east_south_east" direction="south_west" arrival="east_south_east_south_east" />
+        <link origin="east_east_south_east" direction="west" arrival="east_south_east" />
+        <link origin="east_east_south_east" direction="north_west" arrival="east_east" />
+
+        <link origin="east_south_east_south_east" direction="north_east" arrival="east_east_south_east" />
+        <link origin="east_south_east_south_east" direction="east" arrival="east_east_south_east_south_east" />
+        <link origin="east_south_east_south_east" direction="south_east" arrival="east_south_east_south_east_south_east" />
+        <link origin="east_south_east_south_east" direction="south_west" arrival="south_east_south_east_south_east" />
+        <link origin="east_south_east_south_east" direction="west" arrival="south_east_south_east" />
+        <link origin="east_south_east_south_east" direction="north_west" arrival="east_south_east" />
+
+        <link origin="south_east_south_east_south_east" direction="north_east" arrival="east_south_east_south_east" />
+        <link origin="south_east_south_east_south_east" direction="east" arrival="east_south_east_south_east_south_east" />
+        <!-- <link origin="south_east_south_east_south_east" direction="south_east" arrival="" /> -->
+        <!-- <link origin="south_east_south_east_south_east" direction="south_west" arrival="" /> -->
+        <link origin="south_east_south_east_south_east" direction="west" arrival="south_east_south_east_south_west" />
+        <link origin="south_east_south_east_south_east" direction="north_west" arrival="south_east_south_east" />
+
+        <link origin="south_east_south_east_south_west" direction="north_east" arrival="south_east_south_east" />
+        <link origin="south_east_south_east_south_west" direction="east" arrival="south_east_south_east_south_east" />
+        <!-- <link origin="south_east_south_east_south_west" direction="south_east" arrival="" /> -->
+        <link origin="south_east_south_east_south_west" direction="south_west" arrival="south_east_south_east_south_west_south_west" />
+        <link origin="south_east_south_east_south_west" direction="west" arrival="south_east_south_west_south_west" />
+        <link origin="south_east_south_east_south_west" direction="north_west" arrival="south_east_south_west" />
+
+        <link origin="south_east_south_west_south_west" direction="north_east" arrival="south_east_south_west" />
+        <link origin="south_east_south_west_south_west" direction="east" arrival="south_east_south_east_south_west" />
+        <link origin="south_east_south_west_south_west" direction="south_east" arrival="south_east_south_east_south_west_south_west" />
+        <!-- <link origin="south_east_south_west_south_west" direction="south_west" arrival="" /> -->
+        <link origin="south_east_south_west_south_west" direction="west" arrival="south_west_south_west_south_west" />
+        <link origin="south_east_south_west_south_west" direction="north_west" arrival="south_west_south_west" />
+
+        <link origin="south_west_south_west_south_west" direction="north_east" arrival="south_west_south_west" />
+        <link origin="south_west_south_west_south_west" direction="east" arrival="south_east_south_west_south_west" />
+        <!-- <link origin="south_west_south_west_south_west" direction="south_east" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_south_west" direction="south_west" arrival="" /> -->
+        <link origin="south_west_south_west_south_west" direction="west" arrival="south_west_south_west_south_west_west" />
+        <link origin="south_west_south_west_south_west" direction="north_west" arrival="south_west_south_west_west" />
+
+        <link origin="south_west_south_west_west" direction="north_east" arrival="south_west_west" />
+        <link origin="south_west_south_west_west" direction="east" arrival="south_west_south_west" />
+        <link origin="south_west_south_west_west" direction="south_east" arrival="south_west_south_west_south_west" />
+        <link origin="south_west_south_west_west" direction="south_west" arrival="south_west_south_west_south_west_west" />
+        <link origin="south_west_south_west_west" direction="west" arrival="south_west_south_west_west_west" />
+        <link origin="south_west_south_west_west" direction="north_west" arrival="south_west_west_west" />
+
+        <link origin="south_west_west_west" direction="north_east" arrival="west_west" />
+        <link origin="south_west_west_west" direction="east" arrival="south_west_west" />
+        <link origin="south_west_west_west" direction="south_east" arrival="south_west_south_west_west" />
+        <link origin="south_west_west_west" direction="south_west" arrival="south_west_south_west_west_west" />
+        <link origin="south_west_west_west" direction="west" arrival="south_west_west_west_west" />
+        <link origin="south_west_west_west" direction="south_west" arrival="west_west_west" />
+
+        <link origin="west_west_west" direction="north_east" arrival="west_west_north_west" />
+        <link origin="west_west_west" direction="east" arrival="west_west" />
+        <link origin="west_west_west" direction="south_east" arrival="south_west_west_west" />
+        <link origin="west_west_west" direction="south_west" arrival="south_west_west_west_west" />
+        <!-- <link origin="west_west_west" direction="west" arrival="" /> -->
+        <!-- <link origin="west_west_west" direction="north_west" arrival="" /> -->
+
+        <link origin="west_west_north_west" direction="north_east" arrival="west_north_west_north_west" />
+        <link origin="west_west_north_west" direction="east" arrival="west_north_west" />
+        <link origin="west_west_north_west" direction="south_east" arrival="west_west" />
+        <link origin="west_west_north_west" direction="south_west" arrival="west_west_west" />
+        <!-- <link origin="west_west_north_west" direction="west" arrival="" /> -->
+        <link origin="west_west_north_west" direction="north_west" arrival="west_west_north_west_north_west" />
+
+        <link origin="west_north_west_north_west" direction="north_east" arrival="north_west_north_west_north_west" />
+        <link origin="west_north_west_north_west" direction="east" arrival="north_west_north_west" />
+        <link origin="west_north_west_north_west" direction="south_east" arrival="west_north_west" />
+        <link origin="west_north_west_north_west" direction="south_west" arrival="west_west_north_west" />
+        <link origin="west_north_west_north_west" direction="west" arrival="west_west_north_west_north_west" />
+        <link origin="west_north_west_north_west" direction="north_west" arrival="west_north_west_north_west_north_west" />
+
+        <!-- <link origin="north_west_north_west_north_west" direction="north_east" arrival="" /> -->
+        <link origin="north_west_north_west_north_west" direction="east" arrival="north_west_north_west_north_east" />
+        <link origin="north_west_north_west_north_west" direction="south_east" arrival="north_west_north_west" />
+        <link origin="north_west_north_west_north_west" direction="south_west" arrival="west_north_west_north_west" />
+        <link origin="north_west_north_west_north_west" direction="west" arrival="west_north_west_north_west_north_west" />
+        <!-- <link origin="north_west_north_west_north_west" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="north_west_north_west_north_east" direction="north_east" arrival="" /> -->
+        <link origin="north_west_north_west_north_east" direction="east" arrival="north_west_north_east_north_east" />
+        <link origin="north_west_north_west_north_east" direction="south_east" arrival="north_west_north_east" />
+        <link origin="north_west_north_west_north_east" direction="south_west" arrival="north_west_north_west" />
+        <link origin="north_west_north_west_north_east" direction="west" arrival="north_west_north_west_north_west" />
+        <!-- <link origin="north_west_north_west_north_east" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="north_west_north_east_north_east" direction="north_east" arrival="" /> -->
+        <link origin="north_west_north_east_north_east" direction="east" arrival="north_east_north_east_north_east" />
+        <link origin="north_west_north_east_north_east" direction="south_east" arrival="north_east_north_east" />
+        <link origin="north_west_north_east_north_east" direction="south_west" arrival="north_west_north_east" />
+        <link origin="north_west_north_east_north_east" direction="west" arrival="north_west_north_west_north_east" />
+        <!-- <link origin="north_west_north_east_north_east" direction="north_west" arrival="" /> -->
+
+        <!-- Range 4 -->
+        <!-- <link origin="north_east_north_east_north_east_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="north_east_north_east_north_east_east" direction="east" arrival="" /> -->
+        <link origin="north_east_north_east_north_east_east" direction="south_east" arrival="north_east_north_east_east_east" />
+        <link origin="north_east_north_east_north_east_east" direction="south_west" arrival="north_east_north_east_east" />
+        <link origin="north_east_north_east_north_east_east" direction="west" arrival="north_east_north_east_north_east" />
+        <!-- <link origin="north_east_north_east_north_east_east" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="north_east_north_east_east_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="north_east_north_east_east_east" direction="east" arrival="" /> -->
+        <!-- <link origin="north_east_north_east_east_east" direction="south_east" arrival="" /> -->
+        <link origin="north_east_north_east_east_east" direction="south_west" arrival="north_east_east_east" />
+        <link origin="north_east_north_east_east_east" direction="west" arrival="north_east_north_east_east" />
+        <link origin="north_east_north_east_east_east" direction="north_west" arrival="north_east_north_east_north_east_east" />
+
+        <!-- <link origin="north_east_east_east_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="north_east_east_east_east" direction="east" arrival="" /> -->
+        <!-- <link origin="north_east_east_east_east" direction="south_east" arrival="" /> -->
+        <link origin="north_east_east_east_east" direction="south_west" arrival="east_east_east" />
+        <link origin="north_east_east_east_east" direction="west" arrival="north_east_east_east" />
+        <link origin="north_east_east_east_east" direction="north_west" arrival="north_east_north_east_east_east" />
+
+        <!-- <link origin="east_east_south_east_south_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="east_east_south_east_south_east" direction="east" arrival="" /> -->
+        <!-- <link origin="east_east_south_east_south_east" direction="south_east" arrival="" /> -->
+        <link origin="east_east_south_east_south_east" direction="south_west" arrival="east_south_east_south_east_south_east" />
+        <link origin="east_east_south_east_south_east" direction="west" arrival="east_south_east_south_east" />
+        <link origin="east_east_south_east_south_east" direction="north_west" arrival="east_east_south_east" />
+
+        <link origin="east_south_east_south_east_south_east" direction="north_east" arrival="east_east_south_east_south_east" />
+        <!-- <link origin="east_south_east_south_east_south_east" direction="east" arrival="" /> -->
+        <!-- <link origin="east_south_east_south_east_south_east" direction="south_east" arrival="" /> -->
+        <!-- <link origin="east_south_east_south_east_south_east" direction="south_west" arrival="" /> -->
+        <link origin="east_south_east_south_east_south_east" direction="west" arrival="south_east_south_east_south_east" />
+        <link origin="east_south_east_south_east_south_east" direction="north_west" arrival="east_south_east_south_east" />
+
+        <link origin="south_east_south_east_south_west_south_west" direction="north_east" arrival="south_east_south_east_south_west" />
+        <!-- <link origin="south_east_south_east_south_west_south_west" direction="east" arrival="" /> -->
+        <!-- <link origin="south_east_south_east_south_west_south_west" direction="south_east" arrival="" /> -->
+        <!-- <link origin="south_east_south_east_south_west_south_west" direction="south_west" arrival="" /> -->
+        <link origin="south_east_south_east_south_west_south_west" direction="west" arrival="south_east_south_west_south_west_south_west" />
+        <link origin="south_east_south_east_south_west_south_west" direction="north_west" arrival="south_east_south_west_south_west" />
+
+        <link origin="south_east_south_west_south_west_south_west" direction="north_east" arrival="south_east_south_west_south_west" />
+        <link origin="south_east_south_west_south_west_south_west" direction="east" arrival="south_east_south_east_south_west_south_west" />
+        <!-- <link origin="south_east_south_west_south_west_south_west" direction="south_east" arrival="" /> -->
+        <!-- <link origin="south_east_south_west_south_west_south_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="south_east_south_west_south_west_south_west" direction="west" arrival="" /> -->
+        <link origin="south_east_south_west_south_west_south_west" direction="north_west" arrival="south_west_south_west_south_west" />
+
+        <link origin="south_west_south_west_south_west_west" direction="north_east" arrival="south_west_south_west_west" />
+        <link origin="south_west_south_west_south_west_west" direction="east" arrival="south_west_south_west_south_west" />
+        <!-- <link origin="south_west_south_west_south_west_west" direction="south_east" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_south_west_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_south_west_west" direction="west" arrival="" /> -->
+        <link origin="south_west_south_west_south_west_west" direction="north_west" arrival="south_west_south_west_west_west" />
+
+        <link origin="south_west_south_west_west_west" direction="north_east" arrival="south_west_west_west" />
+        <link origin="south_west_south_west_west_west" direction="east" arrival="south_west_south_west_west" />
+        <link origin="south_west_south_west_west_west" direction="south_east" arrival="south_west_south_west_south_west_west" />
+        <!-- <link origin="south_west_south_west_west_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_west_west" direction="west" arrival="" /> -->
+        <link origin="south_west_south_west_west_west" direction="north_west" arrival="south_west_west_west_west" />
+
+        <link origin="south_west_west_west_west" direction="north_east" arrival="west_west_west" />
+        <link origin="south_west_west_west_west" direction="east" arrival="south_west_west_west" />
+        <link origin="south_west_west_west_west" direction="south_east" arrival="south_west_south_west_west_west" />
+        <!-- <link origin="south_west_west_west_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="south_west_west_west_west" direction="west" arrival="" /> -->
+        <!-- <link origin="south_west_west_west_west" direction="north_west" arrival="" /> -->
+
+        <link origin="west_west_west_north_west" direction="north_east" arrival="west_west_north_west_north_west" />
+        <link origin="west_west_west_north_west" direction="east" arrival="west_west_north_west" />
+        <link origin="west_west_west_north_west" direction="south_east" arrival="west_west_west" />
+        <!-- <link origin="west_west_west_north_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="west_west_west_north_west" direction="west" arrival="" /> -->
+        <!-- <link origin="west_west_west_north_west" direction="north_west" arrival="" /> -->
+
+        <link origin="west_west_north_west_north_west" direction="north_east" arrival="west_north_west_north_west_north_west" />
+        <link origin="west_west_north_west_north_west" direction="east" arrival="west_north_west_north_west" />
+        <link origin="west_west_north_west_north_west" direction="south_east" arrival="west_west_north_west" />
+        <!-- <link origin="west_west_north_west_north_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="west_west_north_west_north_west" direction="west" arrival="" /> -->
+        <!-- <link origin="west_west_north_west_north_west" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="west_north_west_north_west_north_west" direction="north_east" arrival="" /> -->
+        <link origin="west_north_west_north_west_north_west" direction="east" arrival="north_west_north_west_north_west" />
+        <link origin="west_north_west_north_west_north_west" direction="south_east" arrival="west_north_west_north_west" />
+        <link origin="west_north_west_north_west_north_west" direction="south_west" arrival="west_west_north_west_north_west" />
+        <!-- <link origin="west_north_west_north_west_north_west" direction="west" arrival="" /> -->
+        <!-- <link origin="west_north_west_north_west_north_west" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="north_west_north_west_north_west_north_west" direction="north_east" arrival="" /> -->
+        <!-- <link origin="north_west_north_west_north_west_north_west" direction="east" arrival="" /> -->
+        <link origin="north_west_north_west_north_west_north_west" direction="south_east" arrival="north_west_north_west_north_west" />
+        <link origin="north_west_north_west_north_west_north_west" direction="south_west" arrival="west_north_west_north_west_north_west" />
+        <!-- <link origin="north_west_north_west_north_west_north_west" direction="west" arrival="" /> -->
+        <!-- <link origin="north_west_north_west_north_west_north_west" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="north_west_north_east_north_east_north_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="north_west_north_east_north_east_north_east" direction="east" arrival="" /> -->
+        <link origin="north_west_north_east_north_east_north_east" direction="south_east" arrival="north_east_north_east_north_east" />
+        <link origin="north_west_north_east_north_east_north_east" direction="south_west" arrival="north_west_north_west_north_east" />
+        <!-- <link origin="north_west_north_east_north_east_north_east" direction="west" arrival="" /> -->
+        <!-- <link origin="north_west_north_east_north_east_north_east" direction="north_west" arrival="" /> -->
+
+        <!-- <link origin="east_east_south_east_south_east_south_east" direction="north_east" arrival="" /> -->
+        <!-- <link origin="east_east_south_east_south_east_south_east" direction="east" arrival="" /> -->
+        <!-- <link origin="east_east_south_east_south_east_south_east" direction="south_east" arrival="" /> -->
+        <!-- <link origin="east_east_south_east_south_east_south_east" direction="south_west" arrival="" /> -->
+        <link origin="east_east_south_east_south_east_south_east" direction="west" arrival="east_south_east_south_east_south_east" />
+        <link origin="east_east_south_east_south_east_south_east" direction="north_west" arrival="east_east_south_east_south_east" />
+
+        <link origin="south_west_south_west_south_west_west_west" direction="north_east" arrival="south_west_south_west_west_west" />
+        <link origin="south_west_south_west_south_west_west_west" direction="east" arrival="south_west_south_west_south_west_west" />
+        <!-- <link origin="south_west_south_west_south_west_west_west" direction="south_east" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_south_west_west_west" direction="south_west" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_south_west_west_west" direction="west" arrival="" /> -->
+        <!-- <link origin="south_west_south_west_south_west_west_west" direction="north_west" arrival="" /> -->
+    </links>
+    <!-- Need to add the rivers -->
+    <rivers>
+        <river tile="north_east_north_east" dir="south_east" />
+        <river tile="north_east_north_east" dir="east" />
+        <river tile="north_east_north_east_north_east" dir="east" />
+        <river tile="north_east_north_east_north_east" dir="south_east" />
+    </rivers>
+</board>
