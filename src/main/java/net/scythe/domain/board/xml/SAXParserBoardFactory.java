@@ -17,16 +17,13 @@ import java.util.Map;
 public class SAXParserBoardFactory extends DefaultHandler implements BoardFactory {
     private Map<String, Space> spaces;
     private Map<String, Map<Direction, Space>> links;
+    private Map<String, Map<Direction, Space>> rivers;
 
     @Override
     public void startElement (String uri, String localName,
                               String qName, Attributes attributes)
             throws SAXException {
         dispatchProcessing(uri, localName, qName, attributes);
-    }
-
-    @Override
-    public void endElement (String uri, String localName, String qName) throws SAXException {
     }
 
     @Override
@@ -71,12 +68,12 @@ public class SAXParserBoardFactory extends DefaultHandler implements BoardFactor
     }
 
     private void parseBoard() {
-
     }
 
     private void parseSpaces() {
         spaces = new HashMap<>();
         links = new HashMap<>();
+        rivers = new HashMap<>();
     }
 
     private void parseSpace(Attributes attributes) throws SAXException {
@@ -115,9 +112,11 @@ public class SAXParserBoardFactory extends DefaultHandler implements BoardFactor
         } else if ((Terrain.HOME.equals(terrain) && faction == null) || (faction != null && !Terrain.HOME.equals(terrain))) {
             throw new SAXException(String.format("If the tile is a home tile, it must specify a faction, if it is not a home tile it must not specify a faction. Terrain (%1$S) Faction (%2$s)", terrain, faction));
         }
-        Space space = new Space(terrain, neighbours, encounter, tunnel, faction);
+        Map<Direction, Space> river = new HashMap<>();
+        Space space = new Space(id, terrain, neighbours, river, encounter, tunnel, faction);
         spaces.put(id, space);
         links.put(id, neighbours);
+        rivers.put(id, river);
     }
 
     private void parseLinks() {
@@ -152,13 +151,53 @@ public class SAXParserBoardFactory extends DefaultHandler implements BoardFactor
         }
 
         Map<Direction, Space> neighbour = links.get(originId);
-        neighbour.put(direction, spaces.get(arrivalId));
+        if (neighbour.containsKey(direction)) {
+            throw new SAXException(String.format("Attempt to set neighbour on Space(%1$s) in direction(%2$s) with Space(%3$s) but found Space(%4$s)", originId, direction, arrivalId, neighbour.get(direction).getId()));
+        } else {
+            neighbour.put(direction, spaces.get(arrivalId));
+        }
     }
 
     private void parseRivers() {
     }
 
-    private void parseRiver(Attributes attributes) {
+    private void parseRiver(Attributes attributes) throws SAXException {
+        String aTile = null;
+        String bTile = null;
 
+        for (int i = 0; i < attributes.getLength(); i++) {
+            String key = attributes.getQName(i).toLowerCase();
+            switch (key) {
+                case "a":
+                    aTile = attributes.getValue(i).toLowerCase();
+                    break;
+                case "b":
+                    bTile = attributes.getValue(i).toLowerCase();
+                    break;
+                default:
+                    Util.unreachableBranch(key);
+                    break;
+            }
+        }
+        if (aTile == null || bTile == null) {
+            throw new SAXException(String.format("At least one of a or b was not specified in a river. a(%1$s) b(%2$s)", aTile, bTile));
+        } else if (!spaces.containsKey(aTile)) {
+            throw new SAXException(String.format("River tile 'a'(%1$s) was not specified in <spaces>. b(%2$s)", aTile, bTile));
+        } else if (!spaces.containsKey(bTile)) {
+            throw new SAXException(String.format("River tile 'b'(%1$s) was not specified in <spaces>. a(%2$s)", bTile, aTile));
+        }
+        Space spaceA = spaces.get(aTile);
+        Space spaceB = spaces.get(bTile);
+        Map<Direction,Space> riversA = rivers.get(aTile);
+        Map<Direction,Space> riversB = rivers.get(bTile);
+        Direction aDir = spaceA.getDirectionToNeighbour(spaceB);
+        Direction bDir = spaceB.getDirectionToNeighbour(spaceA);
+        if (aDir == null) {
+            throw new SAXException(String.format("Could not identify a direction to travel from %1$s to %2$s (%3$s)", aTile, bTile, spaceA));
+        } else if (bDir == null) {
+            throw new SAXException(String.format("Could not identify a direction to travel from %1$s to %2$s (%3$s)", bTile, aTile, spaceB));
+        }
+        riversA.put(aDir, spaceB);
+        riversB.put(bDir, spaceA);
     }
 }

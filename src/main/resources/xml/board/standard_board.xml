@@ -290,7 +290,7 @@
         <link origin="south_west_west_west" direction="south_east" arrival="south_west_south_west_west" />
         <link origin="south_west_west_west" direction="south_west" arrival="south_west_south_west_west_west" />
         <link origin="south_west_west_west" direction="west" arrival="south_west_west_west_west" />
-        <link origin="south_west_west_west" direction="south_west" arrival="west_west_west" />
+        <link origin="south_west_west_west" direction="north_west" arrival="west_west_west" />
 
         <link origin="west_west_west" direction="north_east" arrival="west_west_north_west" />
         <link origin="west_west_west" direction="east" arrival="west_west" />
@@ -456,9 +456,42 @@
     </links>
     <!-- Need to add the rivers -->
     <rivers>
-        <river tile="north_east_north_east" dir="south_east" />
-        <river tile="north_east_north_east" dir="east" />
-        <river tile="north_east_north_east_north_east" dir="east" />
-        <river tile="north_east_north_east_north_east" dir="south_east" />
+        <river a="west_west_north_west" b="west_north_west_north_west" />
+        <river a="west_west_north_west" b="west_north_west" />
+        <river a="west_west" b="west" />
+        <river a="west_west" b="south_west_west" />
+        <river a="west_west" b="south_west_west_west" />
+        <river a="west_west_west" b="south_west_west_west" />
+        <river a="west_west_west" b="south_west_west_west_west" />
+        <river a="south_west_west_west_west" b="south_west_south_west_west_west" />
+        <river a="south_west_west_west" b="south_west_south_west_west_west" />
+        <river a="south_west_west_west" b="south_west_south_west_west" />
+        <river a="south_west_west" b="south_west_south_west_west" />
+        <river a="south_west_south_west_west" b="south_west_south_west" />
+        <river a="south_west_south_west" b="south_east_south_west_south_west" />
+        <river a="south_east_south_west_south_west" b="south_east_south_west" />
+        <river a="south_east_south_west" b="south_east_south_east_south_west" />
+        <river a="south_east_south_east_south_west" b="south_east_south_east" />
+        <river a="south_east_south_east_south_west" b="south_east_south_east_south_east" />
+
+        <river a="north_west_north_west_north_east" b="north_west_north_east" />
+        <river a="north_west_north_west_north_east" b="north_west_north_east_north_east" />
+        <river a="north_west_north_east_north_east" b="north_west_north_east" />
+        <river a="north_west_north_east" b="north_east_north_east" />
+        <river a="north_east_north_east" b="north_east" />
+        <river a="north_east_north_east" b="north_east_east" />
+        <river a="north_east_north_east" b="north_east_north_east_east" />
+        <river a="north_east_north_east_north_east" b="north_east_north_east_east" />
+        <river a="north_east_north_east_north_east" b="north_east_north_east_north_east_east" />
+        <river a="north_east_north_east_east_east" b="north_east_east_east" />
+        <river a="north_east_north_east_east" b="north_east_east_east" />
+        <river a="north_east_east_east" b="north_east_east" />
+        <river a="north_east_east" b="east_east" />
+        <river a="east_east" b="east" />
+        <river a="east_east" b="east_south_east" />
+        <river a="east_east" b="east_east_south_east" />
+        <river a="east_south_east" b="east_east_south_east" />
+        <river a="east_east_south_east" b="east_south_east_south_east" />
+        <river a="east_east_south_east" b="east_east_south_east_south_east" />
     </rivers>
 </board>
