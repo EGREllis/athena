@@ -1,6 +1,7 @@
-package net.scythe.domain.board.xml;
+package net.scythe.domain.board.map.xml;
 
 import net.scythe.domain.board.*;
+import net.scythe.domain.board.map.*;
 import net.scythe.util.Util;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -14,7 +15,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SAXParserBoardFactory extends DefaultHandler implements BoardFactory {
+public class SAXParserScytheMapFactory extends DefaultHandler implements ScytheMapFactory {
     private Map<String, Space> spaces;
     private Map<String, Map<Direction, Space>> links;
     private Map<String, Map<Direction, Space>> rivers;
@@ -27,7 +28,7 @@ public class SAXParserBoardFactory extends DefaultHandler implements BoardFactor
     }
 
     @Override
-    public Board newBoard() {
+    public ScytheMap newBoard() {
         try (InputStream input = ClassLoader.getSystemResourceAsStream("xml/board/standard_board.xml")) {
             SAXParserFactory spf = SAXParserFactory.newInstance();
             spf.setNamespaceAware(true);
@@ -36,7 +37,7 @@ public class SAXParserBoardFactory extends DefaultHandler implements BoardFactor
         } catch (SAXException | ParserConfigurationException | IOException se) {
             Util.throwUncheckedException(se);
         }
-        return new Board(spaces);
+        return new ScytheMap(spaces);
     }
 
     private void dispatchProcessing(String uri, String localName, String qName, Attributes attributes) throws SAXException {

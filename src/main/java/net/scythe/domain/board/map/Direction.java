@@ -1,4 +1,4 @@
-package net.scythe.domain.board;
+package net.scythe.domain.board.map;
 
 import net.scythe.util.Util;
 

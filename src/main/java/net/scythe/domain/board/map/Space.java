@@ -1,4 +1,6 @@
-package net.scythe.domain.board;
+package net.scythe.domain.board.map;
+
+import net.scythe.domain.board.Faction;
 
 import java.util.Map;
 

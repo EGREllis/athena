@@ -1,8 +1,8 @@
 package net.scythe;
 
-import net.scythe.domain.board.Board;
-import net.scythe.domain.board.BoardFactory;
-import net.scythe.domain.board.xml.SAXParserBoardFactory;
+import net.scythe.domain.board.map.ScytheMap;
+import net.scythe.domain.board.map.ScytheMapFactory;
+import net.scythe.domain.board.map.xml.SAXParserScytheMapFactory;
 
 /**
  * Hello world!
@@ -12,7 +12,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        BoardFactory boardFactory = new SAXParserBoardFactory();
-        Board board = boardFactory.newBoard();
+        ScytheMapFactory boardFactory = new SAXParserScytheMapFactory();
+        ScytheMap board = boardFactory.newBoard();
     }
 }
