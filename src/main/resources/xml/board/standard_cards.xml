@@ -1,0 +1,160 @@
+<factory>
+    <card id="10">
+        <cost>
+            <resource gold="2" />
+        </cost>
+        <reward>
+            <action id="deploy" />
+            <resource type="power" quantity="1" />
+        </reward>
+    </card>
+    <card id="16">
+        <cost>
+            <resource type="resource" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="power" quantity="1" />
+            <resource type="popularity" quantity="1" />
+            <resource type="gold" quantity="1" />
+        </reward>
+    </card>
+    <card id="13">
+        <cost>
+            <resource type="resource" quantity="2" distinct="true" />
+        </cost>
+        <reward>
+            <option action="deploy" />
+            <option action="build" />
+        </reward>
+    </card>
+    <card id="4">
+        <cost>
+            <resource type="card" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="gold" quantity="1" />
+        </reward>
+    </card>
+    <card id="12">
+        <cost>
+            <resource type="gold" quantity="2" />
+        </cost>
+        <reward>
+            <action id="enlist" />
+            <resource type="power" quantity="1" />
+        </reward>
+    </card>
+    <card id="8">
+        <cost>
+            <resource type="card" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="resource" quantity="8" />
+        </reward>
+    </card>
+    <card id="7">
+        <cost>
+            <resource type="popularity" quantity="1" />
+        </cost>
+        <reward>
+            <option action="deploy" />
+            <option action="build" />
+        </reward>
+    </card>
+    <card id="11">
+        <cost>
+            <resource type="gold" quantity="2" />
+        </cost>
+        <reward>
+            <action id="build" />
+            <resource type="popularity" quantity="1" />
+        </reward>
+    </card>
+    <card id="3">
+        <cost>
+            <resource type="card" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="popularity" quantity="2" />
+        </reward>
+    </card>
+    <card id="15">
+        <cost>
+            <resource type="resource" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="card" quantity="1" />
+            <resource type="power" quantity="2" />
+        </reward>
+    </card>
+    <card id="14">
+        <cost>
+            <resource type="card" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="worker" quantity="1" />
+            <resource type="gold" quantity="2" />
+        </reward>
+    </card>
+    <card id="18">
+        <cost>
+            <resource type="resource" quantity="2" distinct="true" />
+        </cost>
+        <reward>
+            <option id="enlist" />
+            <option id="upgrade" />
+        </reward>
+    </card>
+    <card id="17">
+        <cost>
+            <resource type="card" quantity="1" />
+        </cost>
+        <reward>
+            <action id="upgrade" />
+            <resource type="power" quantity="1" />
+        </reward>
+    </card>
+    <card id="6">
+        <cost>
+            <resource type="power" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="gold" quantity="3" />
+        </reward>
+    </card>
+    <card id="2">
+        <cost>
+            <resource type="popularity" quantity="1" />
+        </cost>
+        <reward>
+            <option id="enlist" />
+            <option id="upgrade" />
+        </reward>
+    </card>
+    <card id="9">
+        <cost>
+            <resource type="gold" quantity="2" />
+        </cost>
+        <reward>
+            <action id="upgrade" />
+            <resource type="popularity" quantity="1" />
+        </reward>
+    </card>
+    <card id="5">
+        <cost>
+            <resource type="power" quantity="1" />
+        </cost>
+        <reward>
+            <resource type="popularity" quantity="2" />
+        </reward>
+    </card>
+    <card id="1">
+        <cost>
+            <resource type="gold" quantity="1" />
+            <resource type="card" quantity="1" />
+        </cost>
+        <reward>
+            <action id="produce" quantity="2" />
+        </reward>
+    </card>
+</factory>

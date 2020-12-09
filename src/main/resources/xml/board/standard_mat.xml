@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<actions>
+    <action id="move" position="top" building="tunnel">
+        <option name="move" min="2" max="3" initial="2" />
+        <option name="gold" min="2" max="3" initial="2" />
+    </action>
+    <action id="bolster" position="top" building="monument">
+        <option name="power" min="2" max="3" initial="2" cost="1" resource="coin" />
+        <option name="card" min="1" max="2" initial="1" cost="1" resource="card" />
+    </action>
+    <action id="trade" position="top" building="armoury">
+        <option name="trade" quantity="2" cost="1" resource="coin" />
+        <option name="popularity" min="1" max="2" initial="1" cost="1" resource="coin" />
+    </action>
+    <action id="produce" position="top" building="windmill" min="2" max="3" initial="1" />
+    <action id="upgrade" position="bottom" resource="oil" />
+    <action id="deploy" position="bottom" resource="steel" />
+    <action id="build" position="bottom" resource="wood" />
+    <action id="enlist" position="bottom" resource="food" />
+</actions>
+<mats>
+    <mat name="patriotic" popularity="2" gold="6">
+        <pair position="1">
+            <top action="move" />
+            <bottom action="upgrade" min="2" max="2" gold="1" />
+        </pair>
+        <pair position="2">
+            <top action="bolster" />
+            <bottom action="deploy" min="1" max="4" gold="3" />
+        </pair>
+        <pair position="3">
+            <top action="trade" />
+            <bottom action="build" min="2" max="4" gold="0" />
+        </pair>
+        <pair position="4">
+            <top action="produce" />
+            <bottom action="enlist" min="2" max="3" gold="2" />
+        </pair>
+    </mat>
+    <mat name="engineering" popularity="2" gold="5">
+        <pair position="1">
+            <top action="produce" />
+            <bottom action="upgrade" min="2" max="3" gold="2" />
+        </pair>
+        <pair>
+            <top action="trade" />
+            <bottom action="deploy" min="2" max="4" gold="0" />
+        </pair>
+        <pair>
+            <top action="bolster" />
+            <bottom action="build" min="1" max="3" gold="3" />
+        </pair>
+        <pair>
+            <top action="move" />
+            <bottom action="enlist" min="2" max="3" gold="1" />
+        </pair>
+    </mat>
+    <mat name="industrial" popularity="2" gold="4">
+        <pair position="1">
+            <top action="bolster" />
+            <bottom action="upgrade" min="2" max="3" gold="3" />
+        </pair>
+        <pair position="2">
+            <top action="produce" />
+            <bottom action="mech" min="1" max="3" gold="2" />
+        </pair>
+        <pair position="3">
+            <top action="move" />
+            <bottom action="build" min="2" max="3" gold="1" />
+        </pair>
+        <pair position="4">
+            <top action="trade" />
+            <bottom action="enlist" min="2" max="4" gold="0" />
+        </pair>
+    </mat>
+    <mat name="agricultural" popularity="4" gold="7">
+        <pair position="1">
+            <top action="move" />
+            <bottom action="upgrade" min="2" max="2" gold="1" />
+        </pair>
+        <pair position="2">
+            <top action="trade" />
+            <bottom action="deploy" min="2" max="4" gold="0" />
+        </pair>
+        <pair position="3">
+            <top action="produce" />
+            <bottom action="build" min="2" max="4" gold="2" />
+        </pair>
+        <pair position="4">
+            <top action="bolster" />
+            <bottom action="enlist" min="1" max="3" gold="3" />
+        </pair>
+    </mat>
+    <mat name="mechanical" popularity="3" gold="6">
+        <pair position="1">
+            <top action="trade" />
+            <bottom action="upgrade" min="2" max="3" gold="0" />
+        </pair>
+        <pair position="2">
+            <top action="bolster" />
+            <bottom action="deploy" min="1" max="3" gold="2" />
+        </pair>
+        <pair position="3">
+            <top action="move" />
+            <bottom action="build" min="2" max="3" gold="2" />
+        </pair>
+        <pair position="4">
+            <top action="produce" />
+            <bottom action="enlist" min="2" max="4" gold="2" />
+        </pair>
+    </mat>
+    <mat name="innovative" popularity="3" gold="5">
+        <pair position="1">
+            <top action="trade" />
+            <bottom action="upgrade" min="3" max="3" gold="3" />
+        </pair>
+        <pair position="2">
+            <top action="produce" />
+            <bottom action="deploy" min="2" max="3" gold="1" />
+        </pair>
+        <pair position="3">
+            <top action="bolster" />
+            <bottom action="build" min="1" max="4" gold="2" />
+        </pair>
+        <pair position="4">
+            <top action="move" />
+            <bottom action="enlist" min="1" max="3" gold="0" />
+        </pair>
+    </mat>
+    <mat name="militant" popularity="3" gold="4">
+        <pair position="1">
+            <top action="bolster" />
+            <bottom action="upgrade" min="1" max="3" gold="0" />
+        </pair>
+        <pair position="2">
+            <top action="move" />
+            <bottom action="deploy" min="2" max="3" gold="3" />
+        </pair>
+        <pair position="3">
+            <top action="produce" />
+            <bottom action="build" min="3" max="4" gold="1" />
+        </pair>
+        <pair position="4">
+            <top action="trade" />
+            <bottom action="enlist" min="1" max="3" gold="2" />
+        </pair>
+    </mat>
+</mats>
+
